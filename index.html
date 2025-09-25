@@ -9,43 +9,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
-</head>
-<style>body {
+  <style>
+body {
     background-color: rgb(255, 255, 255);
+    margin: 0;
+    font-family: "Georama", sans-serif;
 }
 
 .wellcome {
     color: rgb(26, 104, 6);
-    font-family: "Georama", sans-serif;
-    width: 450px;
+    width: 90%;
+    max-width: 450px;
     text-align: center;
     margin: 100px auto;
     display: block;
 }
 
-.pic1,
-.pic2,
-.pic3,
-.pic4,
-.pic5,
-.pic6 {
-    width: 200px;
-    height: 270px;
-    border-radius: 10px;
-    margin: 10px;
-}
-
 .pics {
     background-color: white;
     border-radius: 10px;
-    width: max-content;   /* اندازه بگیره بر اساس عکس‌ها */
-    margin: 50px auto;    /* کل ردیف وسط‌چین */
-    display: flex;        /* عکس‌ها کنار هم */
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;      /* عکس‌ها توی موبایل پایین برن */
     justify-content: center;
+    gap: 10px;
+}
+
+.pics img {
+    width: 30%;           /* روی موبایل کوچیک‌تر میشن */
+    max-width: 200px;     /* حداکثر اندازه ثابت */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .projects {
@@ -71,7 +68,6 @@
 
 .info {
     color: rgb(26, 104, 6);
-    font-family: "Georama", sans-serif;
     text-align: center;
     margin-top: 100px;
 }
@@ -83,7 +79,20 @@
 
 .fade {
     opacity: 1;
-}</style>
+}
+
+/* Media Query برای موبایل */
+@media (max-width: 600px) {
+    .pics img {
+        width: 45%;
+    }
+
+    .wellcome {
+        margin: 50px auto;
+    }
+}
+  </style>
+</head>
 <body>
   <div class="pics">
     <img src="pic2.jpg" class="pic1">
@@ -93,14 +102,15 @@
     <img src="20221005_134106.jpg" class="pic5">
     <img src="DSC_1012.jpg" class="pic6">
   </div>
+
   <div class="wellcome">
     <h2 id="welcome-text">Welcome to strong hold IRAN</h2>
     <div class="paragraf">
       <p>strong hold IRAN , Iran's largest <strong>pre - stressing</strong> company </p>
     </div>
   </div>
-  <button class="projects">See all projects</button>
 
+  <button class="projects">See all projects</button>
 
   <script>
     const translations = [
@@ -125,23 +135,23 @@
       setTimeout(() => {
         index = (index + 1) % translations.length;
         textElement.textContent = translations[index];
-
-        
         textElement.classList.remove("fade");
       }, 700);
     }, 2000);
+
     const seeProjectsBtn = document.querySelector(".projects");
-
-seeProjectsBtn.addEventListener("click", () => {
-  window.location.href = "projects.html"; 
-});
-
+    seeProjectsBtn.addEventListener("click", () => {
+      window.location.href = "projects.html"; 
+    });
   </script>
-<div class="info"><p>address : Iran - Tehran <strong>vanak</strong> street <strong>kar va tejarat</strong> street - no. <strong>19</strong> Unit <strong>20</strong> </p>
-<p>Office phone : 021-8888 6910</p></div>
 
+  <div class="info">
+    <p>address : Iran - Tehran <strong>vanak</strong> street <strong>kar va tejarat</strong> street - no. <strong>19</strong> Unit <strong>20</strong> </p>
+    <p>Office phone : 021-8888 6910</p>
+  </div>
 </body>
 </html>
+
 
 
 
