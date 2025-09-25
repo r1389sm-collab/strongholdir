@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>strongholdiran</title>
+  <link rel="stylesheet" href="\css\index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+<style>body {
+    background-color: rgb(255, 255, 255);
+}
+
+.wellcome {
+    color: rgb(26, 104, 6);
+    font-family: "Georama", sans-serif;
+    width: 450px;
+    text-align: center;
+    margin: 100px auto;
+    display: block;
+}
+
+.pic1,
+.pic2,
+.pic3,
+.pic4,
+.pic5,
+.pic6 {
+    width: 200px;
+    height: 270px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.pics {
+    background-color: white;
+    border-radius: 10px;
+    width: max-content;   /* اندازه بگیره بر اساس عکس‌ها */
+    margin: 50px auto;    /* کل ردیف وسط‌چین */
+    display: flex;        /* عکس‌ها کنار هم */
+    justify-content: center;
+}
+
+.projects {
+    color: rgb(26, 104, 6);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(26, 104, 6);
+    border-width: 2px;
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: white;
+    transition: 0.7s;
+    display: block;
+    margin: 30px auto;
+}
+
+.projects:hover {
+    color: white;
+    background-color: rgb(26, 104, 6);
+    border-color: white;
+    padding: 15px 30px;
+}
+
+.info {
+    color: rgb(26, 104, 6);
+    font-family: "Georama", sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.welcome-text {
+    transition: opacity 0.1s ease-in-out;
+    opacity: 1;
+}
+
+.fade {
+    opacity: 1;
+}</style>
+<body>
+  <div class="pics">
+    <img src="pic2.jpg" class="pic1">
+    <img src="pic1.jpg" class="pic2">
+    <img src="pic3.jpg" class="pic3">
+    <img src="pic4.jpg" class="pic4">
+    <img src="20221005_134106.jpg" class="pic5">
+    <img src="DSC_1012.jpg" class="pic6">
+  </div>
+  <div class="wellcome">
+    <h2 id="welcome-text">Welcome to strong hold IRAN</h2>
+    <div class="paragraf">
+      <p>strong hold IRAN , Iran's largest <strong>pre - stressing</strong> company </p>
+    </div>
+  </div>
+  <button class="projects">See all projects</button>
+
+
+  <script>
+    const translations = [
+      "Welcome to strong hold IRAN",
+      "Bienvenido a strong hold IRAN",
+      "Benvenuto a strong hold IRAN",
+      "Bienvenue à strong hold IRAN",
+      "strong hold IRAN مرحبًا بكم في",
+      "欢迎来到 strong hold IRAN",
+      "스트롱홀드 이란에 오신 것을 환영합니다",
+      "Добро пожаловать в strong hold IRAN",
+      "strong hold IRAN में आपका स्वागत है",
+      "به استرانگ هلد ایران خوش آمدید",
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById("welcome-text");
+
+    setInterval(() => {
+      textElement.classList.add("fade");
+
+      setTimeout(() => {
+        index = (index + 1) % translations.length;
+        textElement.textContent = translations[index];
+
+        
+        textElement.classList.remove("fade");
+      }, 700);
+    }, 2000);
+    const seeProjectsBtn = document.querySelector(".projects");
+
+seeProjectsBtn.addEventListener("click", () => {
+  window.location.href = "projects.html"; 
+});
+
+  </script>
+<div class="info"><p>address : Iran - Tehran <strong>vanak</strong> street <strong>kar va tejarat</strong> street - no. <strong>19</strong> Unit <strong>20</strong> </p>
+<p>Office phone : 021-8888 6910</p></div>
+
+</body>
+</html>
+
+
+
+
